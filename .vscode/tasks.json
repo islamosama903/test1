@@ -1,0 +1,175 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build-app",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "build-app-cmd",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\New folder (2) && npm.cmd run build\"",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "build-app-cmd-2",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\\\New folder (2) && npm.cmd run build\"",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "build-app-cmd-3",
+			"type": "shell",
+			"command": "cmd.exe /c \"cd /d c:\\\\New folder (2) && npm.cmd run build\"",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "build-app-direct",
+			"type": "shell",
+			"command": "C:\\Program Files\\nodejs\\node.exe C:\\New folder (2)\\node_modules\\vite\\bin\\vite.js build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "build-app-direct-quoted",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\New folder (2)\\node_modules\\vite\\bin\\vite.js' build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "test-app",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\New folder (2)\\node_modules\\vitest\\vitest.mjs' run",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "build-preview",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\New folder (2)\\node_modules\\vite\\bin\\vite.js' build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "start-vite",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\New folder (2)\\node_modules\\vite\\bin\\vite.js' --host 0.0.0.0 --port 4173",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "inspect-db",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' -e \"import Database from 'better-sqlite3'; import path from 'node:path'; const db = new Database(path.join(process.cwd(),'data','app.sqlite')); const counts = db.prepare('select (select count(*) from users) as users, (select count(*) from couples) as couples, (select count(*) from invitations) as invitations').get(); console.log(JSON.stringify(counts));\"",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "seed-sample-invitation",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\New folder (2)\\tmp-seed.mjs'",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "check-invitation-api",
+			"type": "shell",
+			"command": "Invoke-RestMethod -Uri 'http://localhost:3001/api/public/invitations/latest'",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "build-preview-2",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\New folder (2)\\node_modules\\vite\\bin\\vite.js' build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "restart-vite",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\New folder (2)\\node_modules\\vite\\bin\\vite.js' --host 0.0.0.0 --port 4173",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "preview-local",
+			"type": "shell",
+			"command": "& 'C:\\Program Files\\nodejs\\node.exe' 'C:\\New folder (2)\\node_modules\\vite\\bin\\vite.js' --host 0.0.0.0 --port 5173",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "verify-rsvp-api",
+			"type": "shell",
+			"command": "$body = @{ invitationId = 3; name = 'Alex Chen'; email = 'alex@example.com'; attending = 'yes'; guestCount = 2; notes = 'Looking forward to the celebration.' } | ConvertTo-Json; Invoke-RestMethod -Method Post -Uri 'http://localhost:3001/api/public/guests' -ContentType 'application/json' -Body $body",
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "debug-next-build",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/c",
+				"cd /d C:\\New folder (2) && npm.cmd run build"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "debug-next-build-cmd",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/c",
+				"cd /d \"C:\\New folder (2)\" && npx next build"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		}
+	]
+}
